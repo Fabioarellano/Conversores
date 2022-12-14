@@ -46,7 +46,7 @@ public class FrmMainWindow extends javax.swing.JFrame {
         lblmonedaOrigen = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jPanelConversorTemp = new javax.swing.JPanel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        listaEscalaTemp = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
         txtValor = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
@@ -198,7 +198,7 @@ public class FrmMainWindow extends javax.swing.JFrame {
         jPanelConversorTemp.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanelConversorTemp.setName(""); // NOI18N
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "De Celsius a Fahrenheit", "De Celsius a Kelvin", "De Fahrenheit a Celsius", "De Fahrenheit a Kelvin", "De Kelvin a Celsius", "De Kelvin a Fahrenheit" }));
+        listaEscalaTemp.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "De Celsius a Fahrenheit", "De Celsius a Kelvin", "De Fahrenheit a Celsius", "De Fahrenheit a Kelvin", "De Kelvin a Celsius", "De Kelvin a Fahrenheit" }));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel3.setText("Valor:");
@@ -220,7 +220,7 @@ public class FrmMainWindow extends javax.swing.JFrame {
             .addGroup(jPanelConversorTempLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanelConversorTempLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jComboBox1, 0, 293, Short.MAX_VALUE)
+                    .addComponent(listaEscalaTemp, 0, 293, Short.MAX_VALUE)
                     .addGroup(jPanelConversorTempLayout.createSequentialGroup()
                         .addGroup(jPanelConversorTempLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
@@ -241,7 +241,7 @@ public class FrmMainWindow extends javax.swing.JFrame {
             jPanelConversorTempLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelConversorTempLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(listaEscalaTemp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanelConversorTempLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelConversorTempLayout.createSequentialGroup()
                         .addGap(24, 24, 24)
@@ -349,9 +349,11 @@ public class FrmMainWindow extends javax.swing.JFrame {
         // TODO add your handling code here:
         //celsius a farengeith
         //(ºC * 1.8) + 32
-        Double Fahrenheit = Double.parseDouble(txtValor.getText());
-        Fahrenheit = (Fahrenheit * 1.8) + 32;
-        lblConversionTemp.setText(String.format("%.2f", Fahrenheit));
+//        Double Fahrenheit = Double.parseDouble(txtValor.getText());
+//        Fahrenheit = (Fahrenheit * 1.8) + 32;
+//        lblConversionTemp.setText(String.format("%.2f", Fahrenheit));
+        String cad = (String) listaEscalaTemp.getSelectedItem();
+        conversionTemp(cad);
 
     }//GEN-LAST:event_btnConversorTempActionPerformed
 
@@ -395,7 +397,6 @@ public class FrmMainWindow extends javax.swing.JFrame {
     private javax.swing.JButton btnConvertir;
     private javax.swing.ButtonGroup btnGrupoConversor;
     private javax.swing.JButton jButtonSalir;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -410,6 +411,7 @@ public class FrmMainWindow extends javax.swing.JFrame {
     private javax.swing.JLabel lblTempOrigen;
     private javax.swing.JLabel lblValorConvertido;
     private javax.swing.JLabel lblmonedaOrigen;
+    private javax.swing.JComboBox<String> listaEscalaTemp;
     private javax.swing.JComboBox<String> listaMonedas;
     private javax.swing.JTextField txtValor;
     private javax.swing.JTextField txtValorAConvertir;
@@ -515,13 +517,15 @@ public class FrmMainWindow extends javax.swing.JFrame {
 
         return conversionMoneda;
     }
+
     //imprimir moneda
     public void imprimirCambioMoneda(double nuevoValorMoneda, String strMoneda) {
         lblValorConvertido.setText(String.format("%.2f", nuevoValorMoneda) + " " + strMoneda);
     }
+
     //imprimir temp
     public void imprimirCambioTemperatura(double nuevoValorTemp, String strTemp) {
-        lblValorConvertido.setText(String.format("%.2f", nuevoValorTemp) + " " + strTemp);
+        lblConversionTemp.setText(String.format("%.2f", nuevoValorTemp) + " ° " + strTemp);
     }
 
     public boolean validar(String cad) {
@@ -546,12 +550,17 @@ public class FrmMainWindow extends javax.swing.JFrame {
                 Double celsius = Double.parseDouble(txtValor.getText());
                 celsius = (celsius * 1.8) + 32;
                 lblConversionTemp.setText(String.format("%.2f", celsius));
+                lblTempOrigen.setText("Celsius");
+                //imprimirCambioMoneda(convertirMonedaDestino(35.33, 'm'), "Peso(s)");
+                imprimirCambioTemperatura(celsius, "Fahrenheit");
                 break;
             case "De Celsius a Kelvin":
                 //ºC + 273.15
                 celsius = Double.parseDouble(txtValor.getText());
                 celsius = celsius + 273.15;
-                lblConversionTemp.setText(String.format("%.2f", Fahrenheit));
+                lblTempOrigen.setText("Celsius");
+                lblConversionTemp.setText(String.format("%.2f", celsius));
+                imprimirCambioTemperatura(celsius, "kelvin");
                 break;
             case "De Fahrenheit a Celsius":
                 break;
