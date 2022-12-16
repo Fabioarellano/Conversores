@@ -5,7 +5,7 @@ Challenge 5 - Conversor
 
 Challenge 5-ONE (Oracle Next Education) y Alura 
 
-El crea el challenge 5, donde se implementa un conversor de moneda y de temperatura con su correspondiente equivalencia establecida utilizando el lenguaje Java y como se detalla a continuación:
+Se crea el challenge 5, donde se implementa un conversor de moneda y de temperatura con su correspondiente equivalencia establecida utilizando el lenguaje Java y como se detalla a continuación:
 
 •	Conversor de Monedas 
 
