@@ -9,7 +9,8 @@ import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 
 /**
- *
+ *Conversor de mondeda y temperatura. 
+ *el cambio monetario es a la fecha del 8/12/2022. Es necesario actualizar
  * @author Fabio
  */
 public class FrmMainWindow extends javax.swing.JFrame {
@@ -56,7 +57,7 @@ public class FrmMainWindow extends javax.swing.JFrame {
         btnConversorTemp = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Conversor");
+        setTitle("Conversor - by: F.A.M");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jButtonSalir.setText("Salir");
