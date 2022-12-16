@@ -20,6 +20,7 @@ public class FrmMainWindow extends javax.swing.JFrame {
     public FrmMainWindow() {
         initComponents();
         jPanelSeleccionConversor.setVisible(false);
+        jPanelConversorTemp.setVisible(false);
     }
 
     /**
@@ -155,55 +156,62 @@ public class FrmMainWindow extends javax.swing.JFrame {
             .addGroup(jPanelSeleccionConversorLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanelSeleccionConversorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(listaMonedas, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanelSeleccionConversorLayout.createSequentialGroup()
                         .addGroup(jPanelSeleccionConversorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING))
+                            .addComponent(jLabel4))
                         .addGap(18, 18, 18)
                         .addGroup(jPanelSeleccionConversorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblValorConvertido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(jPanelSeleccionConversorLayout.createSequentialGroup()
-                                .addComponent(txtValorAConvertir, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanelSeleccionConversorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtValorAConvertir, javax.swing.GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE)
+                                    .addComponent(lblValorConvertido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lblmonedaOrigen, javax.swing.GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE)))))
-                .addContainerGap())
-            .addGroup(jPanelSeleccionConversorLayout.createSequentialGroup()
-                .addGap(98, 98, 98)
-                .addComponent(btnConvertir)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(lblmonedaOrigen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanelSeleccionConversorLayout.createSequentialGroup()
+                                .addGap(36, 36, 36)
+                                .addComponent(btnConvertir)
+                                .addGap(0, 148, Short.MAX_VALUE)))
+                        .addGap(12, 12, 12))
+                    .addGroup(jPanelSeleccionConversorLayout.createSequentialGroup()
+                        .addComponent(listaMonedas, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())))
         );
         jPanelSeleccionConversorLayout.setVerticalGroup(
             jPanelSeleccionConversorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelSeleccionConversorLayout.createSequentialGroup()
-                .addGap(18, 18, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(listaMonedas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanelSeleccionConversorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanelSeleccionConversorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel2)
-                        .addComponent(txtValorAConvertir, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(lblmonedaOrigen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGroup(jPanelSeleccionConversorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelSeleccionConversorLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblValorConvertido, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(52, 52, 52)
+                        .addComponent(jLabel4))
+                    .addComponent(lblmonedaOrigen, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanelSeleccionConversorLayout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addComponent(jLabel4)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnConvertir, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanelSeleccionConversorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtValorAConvertir, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblValorConvertido, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addComponent(btnConvertir, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(310, 310, 310))
         );
 
         jPanelConversorTemp.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanelConversorTemp.setName(""); // NOI18N
+        jPanelConversorTemp.setPreferredSize(new java.awt.Dimension(345, 489));
 
         listaEscalaTemp.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "De Celsius a Fahrenheit", "De Celsius a Kelvin", "De Fahrenheit a Celsius", "De Fahrenheit a Kelvin", "De Kelvin a Celsius", "De Kelvin a Fahrenheit" }));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel3.setText("Valor:");
 
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel5.setText("=>");
+
+        lblConversionTemp.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
 
         btnConversorTemp.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnConversorTemp.setText("Convertir");
@@ -220,9 +228,9 @@ public class FrmMainWindow extends javax.swing.JFrame {
             .addGroup(jPanelConversorTempLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanelConversorTempLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(listaEscalaTemp, 0, 293, Short.MAX_VALUE)
+                    .addComponent(listaEscalaTemp, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanelConversorTempLayout.createSequentialGroup()
-                        .addGroup(jPanelConversorTempLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanelConversorTempLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel3)
                             .addComponent(jLabel5))
                         .addGap(18, 18, 18)
@@ -233,9 +241,9 @@ public class FrmMainWindow extends javax.swing.JFrame {
                         .addComponent(lblTempOrigen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(jPanelConversorTempLayout.createSequentialGroup()
-                .addGap(108, 108, 108)
+                .addGap(96, 96, 96)
                 .addComponent(btnConversorTemp)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(160, Short.MAX_VALUE))
         );
         jPanelConversorTempLayout.setVerticalGroup(
             jPanelConversorTempLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -253,32 +261,31 @@ public class FrmMainWindow extends javax.swing.JFrame {
                             .addComponent(lblTempOrigen, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGroup(jPanelConversorTempLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelConversorTempLayout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(jLabel5))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblConversionTemp, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnConversorTemp, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanelConversorTempLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(lblConversionTemp, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
-                .addComponent(btnConversorTemp)
-                .addGap(37, 37, 37))
+                        .addGap(17, 17, 17)
+                        .addComponent(jLabel5)))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButtonSalir)
-                .addGap(46, 46, 46))
             .addGroup(layout.createSequentialGroup()
                 .addGap(21, 21, 21)
-                .addComponent(jPanelConversor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(110, 110, 110)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanelConversorTemp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanelSeleccionConversor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButtonSalir)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanelConversor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanelSeleccionConversor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanelConversorTemp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -286,11 +293,11 @@ public class FrmMainWindow extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jButtonSalir)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanelConversor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanelSeleccionConversor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanelConversorTemp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jPanelSeleccionConversor, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jPanelConversor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanelConversorTemp, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -300,14 +307,16 @@ public class FrmMainWindow extends javax.swing.JFrame {
 
     private void jrButtonTemperaturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrButtonTemperaturaActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(null, "Selecciono opcion " + jrButtonTemperatura.getText());
+        //JOptionPane.showMessageDialog(null, "Selecciono opcion " + jrButtonTemperatura.getText());
         jPanelSeleccionConversor.setVisible(false);
+        jPanelConversorTemp.setVisible(true);
     }//GEN-LAST:event_jrButtonTemperaturaActionPerformed
 
     private void jrButtonMonedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrButtonMonedaActionPerformed
         // TODO add your handling code here:
         jPanelSeleccionConversor.setVisible(true);
-        JOptionPane.showMessageDialog(null, "Selecciono opcion " + jrButtonMoneda.getText());
+        jPanelConversorTemp.setVisible(false);
+        //JOptionPane.showMessageDialog(null, "Selecciono opcion " + jrButtonMoneda.getText());
     }//GEN-LAST:event_jrButtonMonedaActionPerformed
 
     private void jButtonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalirActionPerformed
@@ -324,21 +333,22 @@ public class FrmMainWindow extends javax.swing.JFrame {
 
         // 1 dolar => 4825,40.
         if (validar(txtValorAConvertir.getText())) {
-            double monedaDolar = Double.parseDouble(txtValorAConvertir.getText());
-            //monedaDolar = (double)Math.round(((monedaDolar/4825.40)*100d)/100);
-            monedaDolar = monedaDolar / 4825.40;
-            System.out.println(monedaDolar);
+//            double monedaDolar = Double.parseDouble(txtValorAConvertir.getText());
+//            //monedaDolar = (double)Math.round(((monedaDolar/4825.40)*100d)/100);
+//            monedaDolar = monedaDolar / 4825.40;
+//            System.out.println(monedaDolar);
 
             //String valor = String.valueOf(monedaDolar);
-            lblValorConvertido.setText(String.format("%.2f", monedaDolar));
-            System.out.println("conversion actual " + listaMonedas.getSelectedItem());
+            //lblValorConvertido.setText(String.format("%.2f", monedaDolar));
+            //System.out.println("conversion actual " + listaMonedas.getSelectedItem());
             String cad = (String) listaMonedas.getSelectedItem();
-            System.out.println("cadena " + cad.substring(3, 9));
+           // System.out.println("cadena " + cad.substring(3, 9));
             int s = cad.substring(3, 10).indexOf(cad.substring(3, 10));
-            System.out.println("sss " + s);
+            //System.out.println("sss " + s);
             conversion(cad);
         } else {
-
+            lblmonedaOrigen.setText("");
+            lblValorConvertido.setText("");
             JOptionPane.showMessageDialog(null, "Debe ingresar datos numericos");
             txtValorAConvertir.requestFocus();
         }
@@ -352,8 +362,17 @@ public class FrmMainWindow extends javax.swing.JFrame {
 //        Double Fahrenheit = Double.parseDouble(txtValor.getText());
 //        Fahrenheit = (Fahrenheit * 1.8) + 32;
 //        lblConversionTemp.setText(String.format("%.2f", Fahrenheit));
-        String cad = (String) listaEscalaTemp.getSelectedItem();
-        conversionTemp(cad);
+
+        if (validarTemp(txtValor.getText())) {
+            String cad = (String) listaEscalaTemp.getSelectedItem();
+            conversionTemp(cad);
+        } else {
+            lblTempOrigen.setText("");
+            lblConversionTemp.setText("");
+            JOptionPane.showMessageDialog(null, "Debe ingresar datos numericos");
+            txtValorAConvertir.requestFocus();
+        }
+
 
     }//GEN-LAST:event_btnConversorTempActionPerformed
 
@@ -434,14 +453,14 @@ public class FrmMainWindow extends javax.swing.JFrame {
 
                 break;
             case "De Pesos a Euros":
-                System.out.println("Pesos a Euros");
+                // System.out.println("Pesos a Euros");
                 //ConvertirMonedaDestino(5087.19);
                 lblmonedaOrigen.setText("Peso(s)");
                 imprimirCambioMoneda(convertirMonedaDestino(5087.19, 'd'), "Euro(s)");
                 //lblValorConvertido.setText(String.format("%.2f", ConvertirMonedaDestino(5087.19)));
                 break;
             case "De Pesos a Libras":
-                System.out.println("Pesos a Libras");
+                //System.out.println("Pesos a Libras");
                 //ConvertirMonedaDestino(5087.19);
                 lblmonedaOrigen.setText("Peso(s)");
                 imprimirCambioMoneda(convertirMonedaDestino(5915.30, 'd'), "Libra(s)");
@@ -449,49 +468,49 @@ public class FrmMainWindow extends javax.swing.JFrame {
                 break;
 
             case "De Pesos a Yen":
-                System.out.println("Pesos a Yen");
+                //System.out.println("Pesos a Yen");
                 //ConvertirMonedaDestino(5087.19);
                 lblmonedaOrigen.setText("Peso(s)");
                 imprimirCambioMoneda(convertirMonedaDestino(35.33, 'd'), "Yen(es)");
                 //lblValorConvertido.setText(String.format("%.2f", ConvertirMonedaDestino(5087.19)));
                 break;
             case "De Pesos a Won Coreano":
-                System.out.println("Pesos a Won Coreano");
+                //System.out.println("Pesos a Won Coreano");
                 //ConvertirMonedaDestino(5087.19);
                 lblmonedaOrigen.setText("Peso(s)");
                 imprimirCambioMoneda(convertirMonedaDestino(3.70, 'd'), "Won Coreano(s)");
                 //lblValorConvertido.setText(String.format("%.2f", ConvertirMonedaDestino(5087.19)));
                 break;
             case "De Dólar a Pesos":
-                System.out.println("Dólar a Pesos");
+                //System.out.println("Dólar a Pesos");
                 //ConvertirMonedaDestino(5087.19);
                 lblmonedaOrigen.setText("Dólar(es)");
                 imprimirCambioMoneda(convertirMonedaDestino(4825.87, 'm'), "Peso(s)");
                 //lblValorConvertido.setText(String.format("%.2f", ConvertirMonedaDestino(5087.19)));
                 break;
             case "De Euros a Pesos":
-                System.out.println("Euros a Pesos");
+                //System.out.println("Euros a Pesos");
                 //ConvertirMonedaDestino(5087.19);
                 lblmonedaOrigen.setText("Euro(s)");
                 imprimirCambioMoneda(convertirMonedaDestino(5087.19, 'm'), "Peso(s)");
                 //lblValorConvertido.setText(String.format("%.2f", ConvertirMonedaDestino(5087.19)));
                 break;
             case "De Libras a Pesos":
-                System.out.println("Libras a Pesos");
+                //System.out.println("Libras a Pesos");
                 //ConvertirMonedaDestino(5087.19);
                 lblmonedaOrigen.setText("Libra(s)");
                 imprimirCambioMoneda(convertirMonedaDestino(5915.30, 'm'), "Peso(s)");
                 //lblValorConvertido.setText(String.format("%.2f", ConvertirMonedaDestino(5087.19)));
                 break;
             case "De Yen a Pesos":
-                System.out.println("Yen a Pesos");
+                //System.out.println("Yen a Pesos");
                 //ConvertirMonedaDestino(5087.19);
                 lblmonedaOrigen.setText("Yen(es)");
                 imprimirCambioMoneda(convertirMonedaDestino(35.33, 'm'), "Peso(s)");
                 //lblValorConvertido.setText(String.format("%.2f", ConvertirMonedaDestino(5087.19)));
                 break;
             case "De Won Coreano a Pesos":
-                System.out.println("Won Coreano a Pesos");
+                //System.out.println("Won Coreano a Pesos");
                 //ConvertirMonedaDestino(5087.19);
                 lblmonedaOrigen.setText("Won Coreano");
                 imprimirCambioMoneda(convertirMonedaDestino(3.70, 'm'), "Peso(s)");
@@ -529,16 +548,11 @@ public class FrmMainWindow extends javax.swing.JFrame {
     }
 
     public boolean validar(String cad) {
+        return cad.matches("[0-9]*") && !cad.equals("");
+    }
 
-//        if (cad.matches("[0-9]*")) {
-//            System.out.println("Ok");
-//            return true;
-//        }
-//        else{
-//                 System.out.println("Error");
-//               return false;
-//        }
-        return cad.matches("[0-9]*");
+    public boolean validarTemp(String cad) {
+        return cad.matches("[-500-9]*") && !cad.equals("");
     }
 
     //conversion de Temperatura
@@ -548,7 +562,7 @@ public class FrmMainWindow extends javax.swing.JFrame {
                 //celsius a farengeith
                 //(ºC * 1.8) + 32
                 Double celsius = Double.parseDouble(txtValor.getText());
-                celsius = (celsius * 1.8) + 32;
+                celsius = (celsius * 9 / 5) + 32;
                 lblConversionTemp.setText(String.format("%.2f", celsius));
                 lblTempOrigen.setText("Celsius");
                 //imprimirCambioMoneda(convertirMonedaDestino(35.33, 'm'), "Peso(s)");
@@ -560,15 +574,39 @@ public class FrmMainWindow extends javax.swing.JFrame {
                 celsius = celsius + 273.15;
                 lblTempOrigen.setText("Celsius");
                 lblConversionTemp.setText(String.format("%.2f", celsius));
-                imprimirCambioTemperatura(celsius, "kelvin");
+                imprimirCambioTemperatura(celsius, "Kelvin");
                 break;
             case "De Fahrenheit a Celsius":
+                //(ºF - 32)*5/9
+                Double farhenheit = Double.parseDouble(txtValor.getText());
+                farhenheit = (farhenheit - 32) * 5 / 9;
+                lblTempOrigen.setText("Farhenheit");
+                lblConversionTemp.setText(String.format("%.2f", farhenheit));
+                imprimirCambioTemperatura(farhenheit, "Celsius");
                 break;
             case "De Fahrenheit a Kelvin":
+                //(ºF - 459.67)*5/9
+                farhenheit = Double.parseDouble(txtValor.getText());
+                farhenheit = (farhenheit + 459.67) * 5 / 9;
+                lblTempOrigen.setText("Farhenheit");
+                lblConversionTemp.setText(String.format("%.2f", farhenheit));
+                imprimirCambioTemperatura(farhenheit, "Kelvin");
                 break;
             case "De Kelvin a Celsius":
+                //K - 273.15
+                Double kelvin = Double.parseDouble(txtValor.getText());
+                kelvin = (kelvin - 273.15);
+                lblTempOrigen.setText("kelvin");
+                lblConversionTemp.setText(String.format("%.2f", kelvin));
+                imprimirCambioTemperatura(kelvin, "Celsius");
                 break;
             case "De Kelvin a Fahrenheit":
+                //(K-273.15)*9/5+32
+                kelvin = Double.parseDouble(txtValor.getText());
+                kelvin = (kelvin - 273.15) * 9 / 5 + 32;
+                lblTempOrigen.setText("kelvin");
+                lblConversionTemp.setText(String.format("%.2f", kelvin));
+                imprimirCambioTemperatura(kelvin, "Fahrenheit");
                 break;
             default:
                 throw new AssertionError();
