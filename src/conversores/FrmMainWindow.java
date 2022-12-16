@@ -5,7 +5,7 @@
  */
 package conversores;
 
-import java.util.regex.Pattern;
+//import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 
 /**
@@ -441,7 +441,7 @@ public class FrmMainWindow extends javax.swing.JFrame {
 
         switch (cadena) {
             case "De Pesos a Dólar":
-                System.out.println("Pesos a dolares");
+                //System.out.println("Pesos a dolares");
                 // 1 dolar => 4825,40. tasa de cambio a 11 de dic 2022
                 //ConvertirMonedaDestino(4825.87);
                 //lblValorConvertido.setText(String.format("%.2f", ConvertirMonedaDestino(4825.87)));
